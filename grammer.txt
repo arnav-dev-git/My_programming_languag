@@ -1,6 +1,8 @@
-expr    : term ((PLUS|MINUS) term)*                 #expression
+expr    : term ((PLUS|MINUS) term)*                 //expression
 
 term    : term ((MUL|DIV) factor)*
 
 factor  : INT | FLOAT
+        : (PLUS|MINUS) factor
+        : LPAREN expr RPAREN
 
