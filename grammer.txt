@@ -1,0 +1,6 @@
+expr    : term ((PLUS|MINUS) term)*                 #expression
+
+term    : term ((MUL|DIV) factor)*
+
+factor  : INT | FLOAT
+
